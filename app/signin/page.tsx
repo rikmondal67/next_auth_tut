@@ -31,6 +31,7 @@ function SigninForm({url}:any){
         try{
             const url = '/api/signin'
 
+            toast.loading('signing in ..')
 
             const res = await axios.post(url,formdata);
             console.log(res);
