@@ -23,8 +23,8 @@ export async function POST(req:NextRequest){
     }catch(error){
 
 
-         console.log('logout failed');
-        console.log(error);
+        //  console.log('logout failed');
+        // console.log(error);
         
             return NextResponse.json({
             status:false,

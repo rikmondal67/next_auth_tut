@@ -27,7 +27,7 @@ export async function POST(req:NextRequest){
         const signResult=await bcrypt.compare(body.password,password);
 
         if(signResult){
-            console.log('password mached')
+            // console.log('password mached')
 
     //generate token
 
@@ -37,7 +37,7 @@ export async function POST(req:NextRequest){
                     password:'mypassword'
                 },'jwtsecret');
             
-            console.log(token);
+            // console.log(token);
             
             //next cookies
         
@@ -52,7 +52,7 @@ export async function POST(req:NextRequest){
             return response;
                 }
         else{
-            console.log('password not matched')
+            // console.log('password not matched')
             return NextResponse.json({
             status:false,
             msg:'password incorrect'
@@ -62,7 +62,7 @@ export async function POST(req:NextRequest){
 
     else{
 
-        console.log('user not found')
+        // console.log('user not found')
         return NextResponse.json({
             status:false,
             msg:'user not found'
@@ -74,7 +74,7 @@ export async function POST(req:NextRequest){
     }
     
     catch(error){
-        console.log('sign in failed')
+        // console.log('sign in failed')
         return NextResponse.json({
             status:false,
             msg:'db failed'
